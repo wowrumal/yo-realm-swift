@@ -134,7 +134,7 @@ std::shared_ptr<realm::util::Logger> RLMWrapLogFunction(RLMSyncLogFunction fn) {
         bool isSwift = !!NSClassFromString(@"RealmSwiftObjectUtil");
         config.user_agent_binding_info =
             util::format("Realm%1/%2", isSwift ? "Swift" : "ObjectiveC",
-                         RLMStringDataWithNSString(REALM_COCOA_VERSION));
+                         RLMStringDataWithNSString(@"10.29.0"));
         config.user_agent_application_info = RLMStringDataWithNSString(appId);
     }
 

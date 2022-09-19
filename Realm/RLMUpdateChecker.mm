@@ -34,9 +34,9 @@ void RLMCheckForUpdates() {
     NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:@"alpha|beta|rc"
                                                                            options:(NSRegularExpressionOptions)0
                                                                              error:nil];
-    NSUInteger numberOfMatches = [regex numberOfMatchesInString:REALM_COCOA_VERSION
+    NSUInteger numberOfMatches = [regex numberOfMatchesInString:@"10.29.0"
                                                         options:(NSMatchingOptions)0
-                                                          range:NSMakeRange(0, REALM_COCOA_VERSION.length)];
+                                                          range:NSMakeRange(0, @"10.29.0".length)];
 
     if (numberOfMatches > 0) {
         // pre-release version, skip update checking
@@ -49,12 +49,12 @@ void RLMCheckForUpdates() {
         }
 
         NSString *latestVersion = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-        if (![REALM_COCOA_VERSION isEqualToString:latestVersion]) {
+        if (![@"10.29.0" isEqualToString:latestVersion]) {
             NSLog(@"Version %@ of Realm is now available: https://github.com/realm/realm-swift/blob/v%@/CHANGELOG.md", latestVersion, latestVersion);
         }
     };
 
-    NSString *url = [NSString stringWithFormat:@"https://static.realm.io/update/cocoa?%@", REALM_COCOA_VERSION];
+    NSString *url = [NSString stringWithFormat:@"https://static.realm.io/update/cocoa?%@", @"10.29.0"];
     [[NSURLSession.sharedSession dataTaskWithURL:[NSURL URLWithString:url] completionHandler:handler] resume];
 #endif
 }

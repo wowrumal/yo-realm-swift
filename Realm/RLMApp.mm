@@ -131,7 +131,7 @@ namespace {
         _config.platform = "Realm Cocoa";
 
         RLMNSStringToStdString(_config.platform_version, [[NSProcessInfo processInfo] operatingSystemVersionString]);
-        RLMNSStringToStdString(_config.sdk_version, REALM_COCOA_VERSION);
+        RLMNSStringToStdString(_config.sdk_version, @"10.29.0");
         return self;
     }
     return nil;

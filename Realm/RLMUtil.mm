@@ -325,8 +325,8 @@ NSDictionary *RLMDefaultValuesForObjectSchema(__unsafe_unretained RLMObjectSchem
 }
 
 static NSException *RLMException(NSString *reason, NSDictionary *additionalUserInfo) {
-    NSMutableDictionary *userInfo = @{RLMRealmVersionKey: REALM_COCOA_VERSION,
-                                      RLMRealmCoreVersionKey: @REALM_VERSION}.mutableCopy;
+    NSMutableDictionary *userInfo = @{RLMRealmVersionKey: @"10.29.0",
+                                      RLMRealmCoreVersionKey: @"12.7.0"}.mutableCopy;
     if (additionalUserInfo != nil) {
         [userInfo addEntriesFromDictionary:additionalUserInfo];
     }

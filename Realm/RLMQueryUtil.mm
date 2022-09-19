@@ -1812,9 +1812,9 @@ realm::Query RLMPredicateToQuery(NSPredicate *predicate, RLMObjectSchema *object
     }
 
     // Test the constructed query in core
-    std::string validateMessage = query.validate();
-    RLMPrecondition(validateMessage.empty(), @"Invalid query", @"%.*s",
-                    (int)validateMessage.size(), validateMessage.c_str());
+//    std::string validateMessage = query.validate();
+//    RLMPrecondition(validateMessage.empty(), @"Invalid query", @"%.*s",
+//                    (int)validateMessage.size(), validateMessage.c_str());
     return query;
 }
 

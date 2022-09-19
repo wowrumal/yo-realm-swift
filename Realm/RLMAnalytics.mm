@@ -196,7 +196,7 @@ static NSDictionary *RLMAnalyticsPayload() {
                      // Which version of Realm is being used
                      @"Binding": @"cocoa",
                      @"Language": isSwift ? @"swift" : @"objc",
-                     @"Realm Version": REALM_COCOA_VERSION,
+                     @"Realm Version": @"10.29.0",
 #if TARGET_OS_WATCH
                      @"Target OS Type": @"watchos",
 #elif TARGET_OS_TV
